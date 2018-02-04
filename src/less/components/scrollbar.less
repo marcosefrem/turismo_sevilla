@@ -1,0 +1,49 @@
+/*internet explorer scrollbalken*/
+body{
+  scrollbar-base-color: transparent;
+  scrollbar-base-color: transparent;
+  scrollbar-3dlight-color: transparent;
+  scrollbar-highlight-color: transparent;
+  scrollbar-track-color: transparent;
+  scrollbar-arrow-color: @color-white;
+  scrollbar-shadow-color: transparent;
+  scrollbar-dark-shadow-color: transparent;
+}
+/*mozilla scrolbalken*/
+@-moz-document url-prefix(http://),url-prefix(https://) {
+scrollbar {
+   -moz-appearance: none !important;
+   background-color: rgb(255,0,0) !important;
+}
+thumb,scrollbarbutton {
+   -moz-appearance: none !important;
+   background-color: rgb(255,0,0) !important;
+}
+
+thumb:hover,scrollbarbutton:hover {
+   -moz-appearance: none !important;
+   background-color: rgb(255,0,0) !important;
+}
+
+scrollbarbutton {
+   display: none !important;
+}
+
+scrollbar[orient="vertical"] {
+  min-width: 2px !important;
+  max-width: 2px;
+
+}
+}
+/**/
+::-webkit-scrollbar {
+    background: transparent;
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: solid whiteSmoke 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}

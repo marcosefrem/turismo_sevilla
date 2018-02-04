@@ -1,0 +1,156 @@
+//	--------------------------------------------------
+//	Iconos SVG
+// --------------------------------------------------
+
+[class*="icon-"] {
+	display: inline-block;
+	text-align: center;
+	height: 64px;
+	width: 64px;
+	position: relative;
+}
+[class*="icon-"]:before{
+	text-align: center;
+	position: absolute;
+}
+
+[class*="icon-"] svg {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 100%; // Fix Firefox
+}
+
+//IE Legacy
+[class*="icon-"]{
+	opacity: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+	background-size: contain;
+}
+
+.grunticon [class*="icon-"]{ opacity: 1; transition: 10s } 
+
+//	--------------------------------------------------
+//	Colores por defecto
+// --------------------------------------------------
+[class*="icon-"] svg * {
+	fill: #000
+}
+
+
+//	--------------------------------------------------
+//	Tamaños
+// --------------------------------------------------
+
+//El tamaño se calcula en base a un tamaño de icono fuente de 64x64
+//se hace un transform al svg con una escala relativa al tamaño definido en px del contenedor .icon- 
+
+
+//Calculamos el tamaño a escalar
+@icon-scale-xs : 10/ (64 / @icon-xs);
+@icon-scale-sm : 10/ (64 / @icon-sm);
+@icon-scale-md : 10/ (64 / @icon-md);
+@icon-scale-lg : 10/ (64 / @icon-lg);
+
+[class*="icon-"]{
+	
+	&.xs{
+		width: @icon-xs*1px;
+		height: @icon-xs*1px;
+		svg{
+			transform: scale(@icon-scale-xs/10);
+			max-width: @icon-xs*1px;
+		}
+		.legacy-ie & {
+			//Poner el zoom a ojo
+			//zoom: 1;
+		}
+	}
+	
+	&.sm{
+		width: @icon-sm*1px;
+		height: @icon-sm*1px;
+		opacity: 1;
+		background-size: cover;
+		svg{
+			transform: scale(@icon-scale-sm/10);
+			max-width: @icon-sm*1px;
+		}
+		.legacy-ie & {
+			//Poner el zoom a ojo
+			//zoom: 1;
+		}
+		
+	}
+	
+	&.md{
+		width: @icon-md*1px;
+		height: @icon-md*1px;
+		svg{
+			transform: scale(@icon-scale-md/10);
+			max-width: @icon-md*1px;
+		}
+		.legacy-ie & {
+			//Poner el zoom a ojo
+			//zoom: 1;
+		}
+		
+	}
+	
+	&.lg{
+		width: @icon-lg*1px;
+		height: @icon-lg*1px;
+		svg{
+			transform: scale(@icon-scale-lg/10);
+			max-width: @icon-lg*1px;
+		}
+		.legacy-ie & {
+			//Poner el zoom a ojo
+			//zoom: 1;
+		}
+		
+	}
+}
+
+
+.icon-linkedin{
+	background: url("../img/icons/icon-linkedin.svg");
+	opacity: 1;
+	width: 90%;
+	background-position: center center;
+}
+
+
+.icon-arrow-left{
+	background: url("../img/icons/icon-arrow-left.svg");
+	opacity: 1;
+	width: 90%;
+	background-position: center center;
+	&.xxs{
+		width: 10px;
+		height: 10px;
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+}
+
+
+.icon-arrow-back{
+	background: url("../img/icons/icon-arrow-back.png");
+	background-size: cover;
+	&.xs{
+		width: 15px;
+		height: 15px;
+		opacity: 1;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	
+	
+}

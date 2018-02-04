@@ -1,0 +1,36 @@
+// -------------------------------------------------- 
+//	Nav off canvas - Opcion 2. El off-canvas aparece por encima del body
+// --------------------------------------------------
+
+html.in, html.out { overflow: hidden; height: 100%; width: 100%; position: relative; }
+body.in,
+body.out {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+html.in .off-canvas.out{
+  transition-property: left,right, top, bottom;
+  transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+  left: 0;
+  z-index: 9999;
+  &[data-side="right"]{
+  		left: auto;
+  		right: 0;
+  		
+  }
+  &[data-side="top"]{
+  		left: auto;
+  		right: auto;
+  		top: 100%;
+  }
+  &[data-side="bottom"]{
+  		left: auto;
+  		right: auto;
+  		bottom: 100%;
+  }
+}
+.off-canvas{ 
+  padding-top: @mobileHeaderHeight+10; //Altura del header en mobile
+}

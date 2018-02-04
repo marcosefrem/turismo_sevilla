@@ -1,0 +1,16 @@
+@import "imports/fonts64.less";
+
+// Importante, la ruta de las fuenres es fonts, sin ../ 
+// Esto es porque las fuentes se guardan en localStorage por motivos de rendimiento
+// y la ruta se supone que se inicia desde el raiz, no desde la carpeta CSS.
+// Lo mejor es que la ruta de las fuentes sea la misma que tendrá en producción para evitar fuentes sin cargar.
+
+@font-face {
+  font-family: 'Fuente de ejemplo, reemplazar por fuente real';
+  src: url('fonts/icomoon.eot?v=@{siteVersion}'); /* IE9 Compat Modes */
+  src: url('fonts/icomoon.eot?#iefix&v=@{siteVersion}') format('embedded-opentype'), /* IE6-IE8 */
+       url(@icomoon) format('woff'), /* Modern Browsers */
+       url('../fonts/icomoon.ttf?v=@{siteVersion}')  format('truetype'); /* Safari, Android, iOS */
+  	font-weight: normal;
+  	font-style: normal;
+}

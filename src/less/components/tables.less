@@ -1,0 +1,127 @@
+/*	--------------------------------------------------
+	Tablas
+-------------------------------------------------- */
+.table { 
+	width:100%;
+	img{
+		max-width: 150px;
+	}
+	> thead {
+		
+		> tr > th{
+			
+		    &.bg-primary {
+			    background: @color-primary;
+			    color:@color-white;
+		    }
+		    &.bg-primary-dark {
+			    color:@color-white;
+			    background: #1e727f;
+		    }
+	    						
+		}
+		
+	}
+	
+	> tbody {
+		
+		>tr > td  {
+			&.text-center{
+				text-align: center;
+			}
+			&.bg-grey{
+				background: #cfcfcf;
+				color:@color-white;
+			}
+			&.bg-grey-dark{
+				background: #bbbbbb;
+				color:@color-white;
+			}
+
+			
+		}
+		
+		> tr:first-child > td {
+			
+			
+		}
+		
+	}
+	
+} 
+
+/* Tablas con la primera columna destacada */
+.table > thead > tr > th.lead,
+.table > tbody > tr > td.lead {
+	text-align: center;
+	vertical-align: middle;
+	font: 18px 'Helvetica';
+}
+
+
+//Tablas con reflow
+@breakpoint-alpha: 767px; 
+
+.table-reflow table {
+  margin: 1em 0;
+  min-width: 280px; 
+  
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+    padding: 10px;
+    
+  }
+  
+  td {
+    display: block; 
+    padding: 10px;
+    &.nowrap{
+	 white-space: nowrap;   
+    }
+    &:first-child {
+      padding-top: .5em;
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      //content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+
+      // optional stuff to make it look nicer
+      width: 6.5em; // magic number :( adjust according to your own content
+      display: inline-block;
+      // end options
+      
+      @media (min-width: @screen-max-sm) {
+        display: none;
+      }
+    }
+  }
+  
+  th, td {
+    text-align: left;
+    
+
+    
+    @media (min-width: @screen-max-sm) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        //padding-left: 0;
+      }
+      
+      &:last-child {
+        //padding-right: 0;
+      }
+    }
+
+  }
+  
+  
+}
+
+
+

@@ -1,0 +1,26 @@
+.js-parallax {
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	@media (max-width: @screen-max-xs) {
+		height: auto !important;
+	}				
+		
+	&.hero{ height: 700px; }
+	&.mini{ height: 350px; }	
+	
+	.text-parallax{
+		position: absolute;
+		width: 100%;
+		z-index: 9;
+		height: 100px;
+		left: 0;
+		top: 0;
+		bottom:0;
+		margin: auto;
+		vertical-align: middle;
+	}
+
+		
+}
+

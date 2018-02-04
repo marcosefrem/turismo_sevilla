@@ -1,0 +1,110 @@
+/*	--------------------------------------------------
+	Tabs
+-------------------------------------------------- */
+/* Reset bullets */
+
+.nav-tabs {
+	
+	li{
+		
+		&.active{
+			
+			 
+		}
+		
+		//Reset bullets
+		&:before{
+			content: '';
+			display: none;
+		}
+	}
+	> li {
+		
+		
+		&.active{
+
+			> a{
+				
+				&:hover{
+					
+					
+				}
+			}
+			
+			
+		}
+	}
+	
+}
+
+.tab-content { 
+	
+}
+
+.container-special{
+	width: 90%;
+	display: block;
+	margin: auto;	
+	padding: 0;
+		
+}
+
+.nav-tabs{
+	
+	padding: 0;
+
+	display: block;
+	margin: auto;
+	margin-bottom: 25px;
+	li{
+		width: 50%;
+		text-align: center;
+		border:0;
+		padding: 0;
+			background: none;
+		
+		&:first-child{
+		}
+		a{
+			color:@color-text;
+			border-top:0!important;
+			border-left:0!important;
+			border-right:0!important;
+
+			border-bottom:5px solid @color-grey;
+			color:@color-secondary;
+			
+			background: none;
+			&:hover{
+				background: none;
+			}
+		}
+	}
+	
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+		background: none;
+}
+
+.bg-soft-grey{
+	.nav-tabs{
+		a{
+			border-bottom:5px solid @color-white;
+		}
+	}
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+	border:0;
+	border-bottom:5px solid @color-secondary;
+			color:@color-secondary;
+
+}
+
+.tab-content{
+	display: block;
+	margin: auto;		
+	margin-bottom: 15px;
+}
+
+	

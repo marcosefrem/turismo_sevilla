@@ -1,0 +1,114 @@
+/*	--------------------------------------------------
+	Acordeon
+-------------------------------------------------- */
+.panel-group {
+	
+	.panel-heading{
+			
+			padding:0px;
+			background: none;
+			border:0px solid @color-primary;
+			border-radius:0;
+			position: relative;
+	
+			.h4{
+				&.panel-title {
+					padding: 15px;
+					padding-left:0px;
+					padding-right:0px;					
+					font-size: 1.6rem;
+					color:@color-primary;
+					font-weight: 100;
+					cursor: pointer;
+					
+					
+					&[aria-expanded="true"]{
+						
+						&:before{
+							position: absolute;
+							content: "";
+							display: block;
+							right: 5px;
+						    top: 15px;
+							width: 0;
+							height: 0;
+							border-style: solid;
+			
+							border-width: 0 5px 7px 5px;
+							border-color: transparent transparent @color-secondary transparent;							
+						}
+											
+						
+					}
+					
+					&[aria-expanded="false"]{
+						&:before{
+							
+							position: absolute;
+							content: "";
+							display: block;
+							right: 5px;
+						    top: 15px;
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 7px 5px 0 5px;
+							border-color: @color-secondary transparent transparent transparent;			
+				
+						}
+					}
+					
+					a{
+						color:@color-primary;
+						display: block;					
+						text-decoration: none;
+						&:hover{
+							text-decoration: none;
+						}
+					
+						&:before{
+							content:" - ";
+							display: block;
+							position: absolute;
+							right: 10px;
+							top:0;
+							bottom:0;
+							margin: auto;
+							width: 15px;
+							height:17px;
+							color:@color-primary;
+							
+						}	
+						
+						&.collapsed:before{
+							content:" + ";
+							
+							
+						}					
+					
+					
+					
+					
+					}
+					
+
+					
+				}
+		}
+	}	
+	.panel{
+		border-radius: 0;
+		 box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+		 background: none;
+		 border-bottom: 1px solid @color-secondary;
+		 padding-bottom: 15px;
+		 margin-bottom: 15px;
+	}
+	.panel-collapse{
+		font-size: 1.4rem;
+	}
+}
+.panel-default{
+	border:0;
+}
+

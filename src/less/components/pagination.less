@@ -1,0 +1,66 @@
+/*	--------------------------------------------------
+	Paginación
+-------------------------------------------------- */
+.pagination{
+	padding-left: 0;
+}
+.pagination > li > a, .pagination > li > span{
+	border:0;
+	color: @color-text;
+	padding-left: 0;
+	&:hover{
+		color:@color-primary;
+		text-decoration: underline;
+		font-weight: bold;
+		background: none;
+	}
+	
+}
+
+.pagination{
+	.icon-arrow-next{
+		background: url('../img/icon-arrow-green-btn.png') no-repeat center center;
+		opacity: 1;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		top:3px;
+	
+	}	
+	
+	.icon-arrow-prev{
+		background: url('../img/icon-arrow-green-prev-btn.png') no-repeat center center;
+		opacity: 1;
+		width: 15px;
+		height: 15px;
+		top:3px;
+	}		
+}
+
+ul.pagination li{
+	padding-left: 0;
+	text-align: center;
+	background: none;
+	&:before{
+		content:"";
+	}
+	&.active{
+		a{
+			background: @color-secondary;
+		}
+	}
+	a{
+		display: block;
+		margin-left: 5px;
+		margin-right: 5px;
+		background: none;
+		padding: 10px;
+
+		&:hover{
+			background: @color-secondary;
+			color:@color-white;
+			font-weight: normal;
+			text-decoration: none;
+		}
+	}
+}

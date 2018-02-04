@@ -1,0 +1,254 @@
+/* -------------------------------------------------- 
+	Botones
+---------------------------------------------------*/	
+.btn{
+	position: relative;
+	border-radius: 0px;
+	font-size: 1.4rem;
+	letter-spacing: 1.42px;	
+	&.btn-secondary {
+					
+		border:1px solid @color-secondary;			
+		background: @color-secondary;
+		border-radius: 0%;
+		padding-left: 15px;
+		padding-right: 15px;
+		color:@color-white;
+		min-width: 125px;
+					
+		&:hover {
+			background:@color-secondary-soft;
+		}
+		&:active, &.active {
+			
+		}
+		&[disabled] {
+			
+		}
+		&:visited {
+			
+		}
+		
+		
+		&.lg{
+			font-size: 24px;
+			padding-left: 25px;
+			padding-right: 25px;			
+		}
+		
+	}
+	
+	&.btn-block-xs{
+		@media (max-width: @screen-max-xs) {
+			width: 100%;
+		}		
+	}
+
+	&.btn-primary {
+		padding: 15px;
+		border:1px solid @color-grey-dark;			
+		background: @color-white;
+		padding-left: 15px;
+		padding-right: 15px;
+		color:@color-text;
+		min-width: 165px;
+		&:before{
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: -1;
+			background: @color-grey-dark;
+			width: 100%;
+			height: 100%;
+			right: -5px;
+			bottom:-5px;
+		}				
+		&:hover {
+			background:@color-text;
+			color:@color-white;
+		}
+		&:active, &.active {
+			
+		}
+		&[disabled] {
+			
+		}
+		&:visited {
+			
+		}
+	}
+
+	&.btn-transparent {
+		padding: 15px;
+		border:1px solid @color-secondary;			
+		padding-left: 30px;
+		padding-right: 30px;
+		color:@color-white;
+		min-width: 125px;
+		background: none;					
+		&:hover {
+			    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+		}
+		&:active, &.active {
+			
+		}
+		&[disabled] {
+			
+		}
+		&:visited {
+			
+		}
+	}
+	
+
+	
+	&.btn-default {
+		
+		color: @color-white;
+		font-size: 15px;
+		padding: 7px;
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		text-align: center;
+		background: none;
+		border-radius: 0;
+		background: @color-primary-soft;
+		
+		&:hover {
+			background: @color-primary-soft-soft;
+			color: @color-white;
+			
+		}
+		&.has-triangle{
+			&:before{
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 10px 0 10px 10px;
+				border-color: transparent transparent transparent @color-primary-soft;
+				content: "";
+				position: absolute;
+				right: -10px;	
+				top:0;
+				bottom:0;
+				display: block;
+				margin: auto;			
+			}
+
+			
+		}
+		
+		&:active, &.active {
+			
+		}
+		&[disabled] {
+			
+		}
+		&:visited {
+			
+		}
+	}
+	
+	
+	&.btn-full{
+		height: 100%;
+		width: 100%;
+		display: block;
+	}
+}
+
+.link-blue{
+	&:hover{
+		text-decoration:none!important;			
+		span{
+			color:@color-primary-dark!important;
+			text-decoration:none!important;			
+		}
+
+	}
+}
+
+
+.btn-blue{
+	border-radius: 0;
+	border:1px solid @color-primary;
+
+	position: relative;
+		background:@color-white;
+		color:@color-primary;	
+	
+	&.text-left{
+		text-align: left;
+	}
+	&.lg{
+		font-size: 15px;
+		font-weight: bold;
+		padding: 15px;
+	}
+	&:focus{
+		
+		outline: 0!important;	
+	}
+	&:visited,
+	&:focus,
+	&:active,
+	&:hover{
+
+
+		background:@color-primary;
+		color:@color-white;
+		
+		.icon-arrow{
+			background: url('../img/icon-arrow-white-btn.png') no-repeat center center;
+
+		}		
+		.icon-codigo{
+
+			background: url('../img/icon-codigo-white-btn.png') no-repeat center center;
+
+		}
+				
+		
+		
+	}
+	
+	.icon-codigo{
+		display: inline-block;
+		width: 17px;
+		height: 21px;
+		background: url('../img/icon-codigo-green-btn.png') no-repeat center center;
+		float: left;
+		opacity: 1;
+		margin-right: 10px;
+	}
+	
+	
+	.icon-arrow{
+		background: url('../img/icon-arrow-green-btn.png') no-repeat center center;
+	    bottom: 0;
+	    display: block;
+	    height: 15px;
+	    margin: auto;
+	    opacity: 1;
+	    position: absolute;
+	    right: 10px;
+	    top: 0;
+	    width: 15px;
+	}
+}
+
+a.text{
+	color:@color-text;
+}
+@media (max-width: @screen-max-xs) {
+	.btn { min-height: 40px; }
+}				
+
+.btn-tooltip{
+	padding: 0;
+}
+.btn-lg{
+	font-size: 22px;
+}

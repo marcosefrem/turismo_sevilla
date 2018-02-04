@@ -1,0 +1,53 @@
+// -------------------------------------------------- 
+//	Nav off canvas - Opción 1. El body se oculta para mostrar el off-canvas
+// --------------------------------------------------
+
+html.in, html.out {
+  //overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition-property: left,right, top, bottom;
+  transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+}
+body.in, body.out{
+  
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  transition-property: left,right, top, bottom;
+  transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+  @media (max-width: @screen-max-sm) {
+  	left:320px;
+  }
+  @media (max-width: @screen-max-xs) {
+  	left: 80%;
+  }
+  
+  &.right{
+  	left: auto;
+  @media (max-width: @screen-max-sm) {
+  	right:320px;
+  }
+  @media (max-width: @screen-max-xs) {
+  	right: 80%;
+  }
+  	
+  }
+  &.top{
+  	left: auto;
+  	top: 100%;
+  }
+  &.bottom{
+  	left: auto;
+  	bottom: 100%;
+  }
+}	
+
+body.out{
+  left: 0;
+  &.right{
+  	left: auto;
+  	right: 0;
+  }
+}

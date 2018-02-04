@@ -1,0 +1,161 @@
+</body>
+</html>
+
+<script src="js/pola.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+
+<script>
+$('.owl-carousel').owlCarousel({
+	items:1,
+    loop:true,
+    margin:10,
+    nav:true,
+    dots:true,
+    autoplay:true,
+    margin:0,
+	autoplayTimeout:5000,
+    autoplayHoverPause:true,
+	smartSpeed:450,   
+    })
+
+</script>
+
+
+
+
+<script>
+
+	
+	$('img.arrow-down').click(function(){
+		
+			var altoScroll=$("#section2").offset().top;
+			
+		
+			moveToOffset =altoScroll;
+			$("html, body").animate({scrollTop: moveToOffset, useTranslate3d:true }, 1200);
+				
+
+	});
+	
+	
+	
+	$('[data-launch-modal]').click(function(event){
+		event.preventDefault();
+		modalLaunch = $(this).attr("data-launch-modal");
+		$(modalLaunch).addClass('active');
+		
+		//$('#tellus').focus();
+		
+		var anchoVentana = $(window).width();
+		if(anchoVentana>991){
+			if(modalLaunch=="#form"){
+				$('#tellus').focus();
+			}			
+		}
+		
+		
+		
+	})
+	
+	
+	
+	$('#tellus').keydown(function(){
+		
+		$('#form').addClass('writing');
+		$('#form').addClass('tell');
+		$('#form').removeClass('mail');
+
+		
+	})
+	
+	$('#tellus').keyup(function(){	
+		valor2=$('#mail').val();
+		valor=$(this).val();
+		if(valor==="" && valor2===""){
+			$('#form').removeClass('writing');
+		}		
+		
+		
+	
+	});
+	
+	$('#mail').keyup(function(){	
+		valor2=$('#tellus').val();
+		valor=$(this).val();
+		if(valor==="" && valor2===""){
+			$('#form').removeClass('writing');
+		}		
+		
+		
+	
+	});
+	$('#mail').keydown(function(){
+		
+		$('#form').addClass('writing');
+		$('#form').addClass('mail');
+		$('#form').removeClass('tell');
+		
+
+		
+	});
+
+	$('.modal .close').click(function(){
+		
+		$(this).closest('.modal').removeClass('active');
+		
+	})
+	
+	
+	
+	var i=1;
+	reload();
+	
+	function changeText(){
+	
+		i ++;
+		$('#changeText h2').removeClass('active');			
+		$('#changeText #text' + i ).addClass('active')
+
+		if(i==3){
+			i=0;
+			reload();
+		}else{
+			reload();
+			
+		}
+		
+	}
+
+
+	function reload(){
+		setTimeout(function(){
+			 changeText();
+		}, 10000);			
+	}
+
+
+
+	$('[data-option-show]').click(function(event){
+		
+		
+		
+		$('.content-nav').addClass('opacity');
+		
+		$('.nav-site').addClass('opacity');
+		
+		
+		var optionShow=$(this).attr('data-option-show');
+		
+		$('[data-option]').removeClass('active');
+		$('[data-option='+ optionShow +']').addClass('active');
+		
+		
+	});
+
+	$('.js-option-back').click(function(event){
+		$('[data-option]').removeClass('active');
+		$('.content-nav').removeClass('opacity');
+		$('.nav-site').removeClass('opacity');
+	});
+	
+</script>

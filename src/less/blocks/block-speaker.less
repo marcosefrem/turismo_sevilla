@@ -1,0 +1,53 @@
+/*	----------------------------------------------------------------------------------------------------
+*
+*	 Bloque de info-speaker
+*
+------------------------------------------------------------------------------------------------------ */
+
+
+.block-speaker	{
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	
+	&:hover{
+		img{
+			bottom:0px;
+			opacity: 1;
+		}
+	}
+	
+	.initials{
+		letter-spacing: 0;
+		line-height: 240px;	
+		font-size: 19rem;	
+		text-align: center;
+		position: relative;
+		width: 100%;
+		display: block;
+		font-family: 'neueGrotesk bold';
+	}
+	img{
+		max-width: 100%;
+		position: absolute;
+		bottom:-20px;
+		left: 0;
+		right: 0;
+		opacity: 0;
+		transition: all 1s ease-in-out;
+		display: block;
+		margin: auto;		
+		
+	}
+
+	 + .name{
+		text-transform: uppercase;
+		font-size: 1.4rem;
+		letter-spacing: 1.42px;		
+		display: block;
+		text-align: center;
+		z-index: 10;
+		position: relative;
+	}
+}
+

@@ -1,0 +1,75 @@
+/*	----------------------------------------------------------------------------------------------------
+*
+*	 Bloque de ejemplo, borrar
+*
+------------------------------------------------------------------------------------------------------ */
+
+
+.block-mainnav{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	right: 0;
+	max-width: 990px;
+	margin: auto;
+	margin-top: 5%;
+	@media (max-width: @screen-max-md) {
+		max-width: 650px;
+
+
+		
+	}		
+	@media (max-width: @screen-max-xs) {
+		top: auto;
+		transform: none;
+		position: relative;
+		
+	}	
+	> div{
+		display: inline-block;
+		width: 50%;
+		float: left;
+		padding: 40px;
+		padding-bottom: 50px;
+		
+		@media (max-width: @screen-max-xs) {
+			width: 100%;
+			float: none;
+			
+		}			
+		
+		
+		
+		.h2{
+			font-size: 3rem;
+			color:@color-white;
+			font-family: 'Avenir';
+			@media (max-width: @screen-max-md) {
+				font-size: 1.8rem;
+
+				
+			}				
+		}
+		p{
+			color:@color-white;
+			font-size: 1.6rem;			
+			@media (max-width: @screen-max-md) {
+				font-size: 1.4rem;
+				line-height: 16px;
+			}				
+		}
+		&:nth-child(1),
+		&:nth-child(2){
+			border-bottom: 1px solid @color-white; 
+		}
+		&:nth-child(2),
+		&:nth-child(4){
+			border-left: 1px solid @color-white; 
+		}		
+		
+	}
+
+}
+
+

@@ -1,0 +1,84 @@
+// -------------------------------------------------- 
+//	Nav off canvas - Opcion 3. El off-canvas desplaza al body excepto al header
+// --------------------------------------------------
+
+html.in, html.out { overflow: hidden; height: 100%; width: 100%; position: relative; }
+body.in,
+body.out {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+main{
+  	width: 100%;
+  	height: 100%;
+}
+html.in, html.out {
+  main{
+  	transition-property: left,right, top, bottom;
+  	transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	
+  }
+}
+html.in{
+  
+  //Clase para ocultar elementos fuera del main que puedan mostrarse erroneamente
+  .hide-canvas-in{
+  	display: none !important;
+  }
+  .left{
+  	main{
+  		@media (max-width: @screen-max-sm) {
+  			left: 160px;
+  		}
+  		@media (max-width: @screen-max-xs) {
+  			left: 80%;
+  			
+  		}
+  	}
+  }
+
+  
+  .right{
+  	main{
+  		@media (max-width: @screen-max-sm) {
+  			left: auto;
+  			right: 160px;
+  			
+  		}
+  		@media (max-width: @screen-max-xs) {
+  			left: auto;
+  			right: 80%;
+  		}
+  	}
+  }
+}
+
+html.in .off-canvas.out{
+  transition-property: left,right, top, bottom;
+  transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+  left: 0;
+  z-index: 99;
+  &[data-side="right"]{
+  		left: auto;
+  		right: 0;
+  		
+  }
+  &[data-side="top"]{
+  		left: auto;
+  		right: auto;
+  		top: 100%;
+  }
+  &[data-side="bottom"]{
+  		left: auto;
+  		right: auto;
+  		bottom: 100%;
+  }
+}
+
+.off-canvas{ 
+  padding-top: @mobileHeaderHeight+10; //Altura del header en mobile
+}

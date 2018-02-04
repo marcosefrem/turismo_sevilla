@@ -1,0 +1,297 @@
+// -------------------------------------------------- 
+//	Nav off canvas
+// --------------------------------------------------
+
+.off-canvas, button.navbar-toggle {
+	display: none;
+		z-index:9;
+
+}
+
+#off-canvas-right{
+	.absolute.right.top{
+		top:10px;
+		right: 8px;
+	}
+	
+			
+}
+
+//Cambiar XS por SM si lo queremos en iPad
+		
+	.navmenu{
+		.btn-link{
+			&.top{
+					
+				top:10px;
+			}
+					
+		}			
+	}	
+
+
+	button.navbar-toggle {
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		display: block;
+		top:26px;
+		left: 20px;
+		border-radius: 0px;
+		background: none;
+		border: 0;
+		cursor: pointer;
+		@media (max-width: @screen-max-xs) {
+			top:26px;
+		}
+		
+		&.right{
+			right: 15px;
+		
+	
+		}
+		
+		&.close-canvas{
+			left: 15px;
+			top:25px;
+			-webkit-transition: all .5s ease;
+			-moz-transition: all .5s ease;
+			-o-transition: all .5s ease;
+			transition: all .5s ease;				
+			
+			.icon-bar{
+				background: @text-color-navlink;
+				 -ms-transform: rotate(45deg); /* IE 9 */
+			    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+			    transform: rotate(45deg);				
+			}
+			.icon-bar + .icon-bar{
+				 -ms-transform: rotate(-45deg); /* IE 9 */
+			    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+			    transform: rotate(-45deg);		
+			    top:-3px;		
+			}			
+			
+		}
+
+		
+		.icon-bar {
+			height: 3px;
+			background: @color-white;
+			opacity: 1;
+			display: block !important;
+			width: 22px;
+
+			&:first-child,
+			&:last-child{
+				width: 17px;
+			}
+			& + .icon-bar {
+				margin-top: 3px;
+				
+			}
+		}
+		
+		.title{
+			font-size: 0.8rem;
+			
+		}
+		
+		@media (max-width: @screen-max-xs) {
+			
+			.icon-bar { height: 3px;  width: 22px;}
+		}				
+		
+		
+	}
+	
+	
+	.off-canvas {
+		display: block;
+		padding-top: 60px!important;
+		background: @color-white;
+		width: 250px;
+		width: 100%;
+		height: 100%;
+		left: -100%;
+		position: fixed; //fixed para evitar que el off derecho se salga del body
+		z-index: 999;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		//iPad
+		@media (max-width: @screen-max-sm) {
+			//width: 320px;
+			//left: -320px;
+			
+		}		
+				
+		//Móvil
+		@media (max-width: @screen-max-xs) {
+			//width: 80%;
+			//left: -80%;
+		}	
+		
+		//Version derecha
+		&[data-side="right"]{
+			
+			left: auto;
+			right: -100%;
+			
+			//iPad
+			@media (max-width: @screen-max-sm) {
+				width: 320px;
+				left: auto;				
+				right: -320px;
+			}				
+			//Móvil
+			@media (max-width: @screen-max-xs) {
+				width: 100%;
+				left: auto;
+				right: -100%;
+			}	
+			
+		}		
+		
+		//Version top
+		&[data-side="top"]{
+			left: auto;
+			right: auto;
+			top:-100%;
+			width: 100%;
+		}		
+		&[data-side="bottom"]{
+			left: auto;
+			right: auto;
+			bottom:-100%;
+			width: 100%;
+		}		
+	}
+	
+	
+	html.out, body.out{
+		left: 0px;
+	}
+	
+	.canvas-wrap { 
+		display: none;
+		width: 100%;
+		position: absolute;
+		z-index: 99999;
+		background: rgba(0,0,0,.2);
+		transition: .5s;
+	}
+	
+	html, body{
+		left: 0;
+		transition-property: left,right, top, bottom;
+		transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+		
+	}
+	
+	html.out .off-canvas{
+
+		transition-property: left,right, top, bottom;
+		transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+	
+	}
+	
+	.canvas-wrap { z-index: 88; }
+	
+	//Ponemos el off-canvas en absolute para poder animarlo
+	body.in, body.out{
+		.off-canvas { position: absolute; }
+	}
+		
+	
+
+
+.menu-canvas	{
+	
+
+	
+	li{
+		display: block;
+		padding-left: 0;
+		padding-bottom: 0!important;
+		
+		a{
+			display: block;
+			padding: 10px;
+			text-transform: uppercase;
+			font-size: 13px;
+			
+			
+			&.opened{
+				 + .caret{
+					
+					-ms-transform: rotate(180deg); /* IE 9 */
+				    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+				    transform: rotate(180deg);					
+					
+				}
+			}
+			
+		}
+		
+			.caret{
+				border:0;
+				background: url('../img/icon-caret-grey.png') no-repeat;
+				background-size: 100%;
+				width: 17px;
+				height: 11px;
+				top:5px;
+				  -webkit-transition: all .3s ease-in-out;
+				  -moz-transition: all .3s ease-in-out;
+				  -o-transition: all .3s ease-in-out;
+				  transition: all .3s ease-in-out;		
+				  position: absolute;
+			    right: 10px;
+			    top: 15px;				  
+				  
+			  	&.opened{
+				  	
+			  		-ms-transform: rotate(180deg); /* IE 9 */
+				    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+				    transform: rotate(180deg);					
+				  	
+				  	
+			  	}	
+				
+			}
+		
+		
+		
+		li{
+			a{
+				margin-left: 5px;
+				color:@color-white;
+						
+				
+			}
+			.caret{
+				border:0;
+				background: url('../img/icon-caret-white.png') no-repeat;
+				background-size: 100%;
+				width: 17px;
+				height: 11px;
+			}		
+			background: #31448b;
+			li{
+				background: #425cb6;
+				a{
+					margin-left: 10px;
+				}
+				li{
+					background: #4f6dd7;
+					a{
+						margin-left: 15px;
+					}					
+				}
+			}
+		}
+	}
+}
+
+
+
+		

@@ -1,0 +1,84 @@
+// -------------------------------------------------- 
+//	Responsive usando MAX, no MIN
+// --------------------------------------------------
+
+// Small screen / tablet
+@screen-max-xs:              767px;
+// Medium screen / desktop
+@screen-max-sm:              991px;
+// Large screen / wide desktop
+@screen-max-md:              1199px;
+
+
+
+
+// -------------------------------------------------- 
+//	Fuentes
+// --------------------------------------------------
+@primary-font : 'Helvetica';
+@secondary-font : 'Arial';
+
+// -------------------------------------------------- 
+//	Tamaños de iconos, no poner px!
+// --------------------------------------------------
+@icon-lg: 128;
+@icon-md: 56;
+@icon-sm: 32;
+@icon-xs: 20;
+
+
+
+// -------------------------------------------------- 
+//	Tamaño container Full!
+// --------------------------------------------------
+@container-full-size:1200px;
+
+
+
+// -------------------------------------------------- 
+//	Mixins
+// --------------------------------------------------
+//Background SVG con fallback a png
+.background-svg (@img,@color,@adn-v:"@{adnVersion}") {
+	// svg variable background: @color url(@@img) no-repeat;
+	background: @color url("../svg/@{img}.svg?v=@{adn-v}") no-repeat;
+	// firefox bug background-size: contain;
+	background-size: 100% 100%;
+	.no-svg & {background: @color url("../img/static/@{img}.png?v=@{adn-v}") no-repeat;  background-size: 100%; }
+}
+
+
+//Crea clases de color text-XXX
+.createColorTextClasses(@iterator:1) when(@iterator <= length(@array-colors)) {
+    @name: extract(extract(@array-colors, @iterator),1);
+    .text-@{name} {
+        color: extract(extract(@array-colors, @iterator),2) !important;
+    }
+    .createColorTextClasses((@iterator + 1));
+}
+
+
+
+//Crea clases de color bg-XXX
+.createColorBGClasses(@iterator:1) when(@iterator <= length(@array-colors)) {
+    @name: extract(extract(@array-colors, @iterator),1);
+    .bg-@{name} {
+        background-color: extract(extract(@array-colors, @iterator),2) !important;
+    }
+    .createColorBGClasses((@iterator + 1));
+}
+
+//Crea clases de color icon- .XXX
+.createColorIconClasses(@iterator:1) when(@iterator <= length(@array-colors)) {
+    @name: extract(extract(@array-colors, @iterator),1);
+    [class*="icon-"].@{name} svg * {
+        fill: extract(extract(@array-colors, @iterator),2) !important;
+    }
+    .createColorIconClasses((@iterator + 1));
+}
+
+
+
+
+
+@import "mixins_temp.less";

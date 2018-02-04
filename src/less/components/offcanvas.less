@@ -1,0 +1,246 @@
+// -------------------------------------------------- 
+//	Nav off canvas
+// --------------------------------------------------
+
+
+//Cambiar XS por SM si lo queremos en iPad
+
+			
+	//Estilos del botón	
+	button.navbar-toggle {
+		width: 20px;
+		height: 20px;
+		
+	}
+	
+	//Estilos del contenido  del menu
+	.off-canvas {
+		
+		
+		button{
+			background: none;
+			border:0;
+		}
+		.icon-arrow {
+			    opacity: 1;
+			    width: 15px;
+			    height: 15px;
+			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxNHB4IiBoZWlnaHQ9IjdweCIgdmlld0JveD0iMCAwIDE0IDciIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+UGFnZSAxPC90aXRsZT4gICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+ICAgIDxkZWZzPjwvZGVmcz4gICAgPGcgaWQ9IlBhZ2UtMyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iMDFkZXNrdG9wXzAxaG9tZV9tZW51LWNvcHkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02MjUuMDAwMDAwLCAtNjQuMDAwMDAwKSIgZmlsbD0iIzkwMTJGRSI+ICAgICAgICAgICAgPGcgaWQ9Ii1wYcOxbyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjIzLjAwMDAwMCwgNjQuMDAwMDAwKSI+ICAgICAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJQYWdlLTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkuMDAwMDAwLCAzLjUwMDAwMCkgcm90YXRlKC0yNzAuMDAwMDAwKSB0cmFuc2xhdGUoLTkuMDAwMDAwLCAtMy41MDAwMDApICIgcG9pbnRzPSI4IC0zIDggNiA2IDYgOSAxMCAxMi4wMDEgNiAxMCA2IDEwIC0zIj48L3BvbHlnb24+ICAgICAgICAgICAgPC9nPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
+		}	
+				
+
+		.container {
+			&.special{
+				max-width: 880px;
+				.h2{
+					margin-top: -10px;
+				}
+			}
+		}
+		
+		a{
+			position: relative;
+			left: 0px;
+			  -webkit-transition: all 1s ease-in-out;
+			  -moz-transition: all 1s ease-in-out;
+			  -o-transition: all 1s ease-in-out;
+			  transition: all 1s ease-in-out;			
+		}
+		a:hover, a:focus{
+			text-decoration: none!important;
+			left: 15px;
+		}
+		
+		
+		.has-decoration{
+			position: relative;
+			padding-top: 25px;
+			&:before{
+				display: block;
+				position: absolute;
+				width: 30px;
+				height: 3px;
+				background: @text-color-navlink;
+				content: "";
+				top:-15px;
+				left: 0;
+			}				
+
+		}
+		
+		
+		label{
+			font-size: 1.6rem;
+			
+		}
+		input[type="password"],	
+		input[type="email"],
+		input[type="text"]{
+			border:1px solid #D1D1D1;
+			width: 100%;
+			height: 60px;
+			padding-left: 10px;
+			padding-right: 10px;
+			color: @text-color-navlink;	
+		}
+		textarea{
+			border:1px solid #D1D1D1;
+			width: 100%;
+			height: 130px;		
+			padding-left: 10px;
+			padding-right: 10px;	
+			color: @text-color-navlink;	
+			margin-bottom: 15px;		
+		}
+		
+		.btn.btn-transparent{
+			 border: 1px solid @text-color-navlink;
+			 color: @text-color-navlink;
+			 font-family: apercubold;
+			 padding-left: 70px;
+			 padding-right: 70px;
+		}
+		
+		[data-option-show]{
+			cursor: pointer;
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-o-transition: all 3s ease-in-out;
+			transition: all .3s ease-in-out;				
+			&:after{
+				-webkit-transition: all .3s ease-in-out;
+				-moz-transition: all .3s ease-in-out;
+				-o-transition: all 3s ease-in-out;
+				transition: all .3s ease-in-out;					
+				content: "";
+				display: block;
+				width: 80%;
+				height: 1px;
+				background:  @text-color-navlink;
+				position: relative;
+				top:-10px;
+			}
+			
+			&:hover{
+				&:after{
+					content: "";
+					display: block;
+					width: 70%;
+					height: 1px;
+				}
+							
+			}
+		}
+		
+		
+		.icons{
+			
+			margin-top: 100px;
+			@media (max-width: @screen-max-xs) {
+				margin-top:0px;
+			}			
+			a:hover, a:focus{
+				text-decoration: none!important;
+				left: 0px;
+			}
+			[class*=icon-] {
+				background-position: center center;
+				@media (max-width: @screen-max-xs) {
+					position: relative;
+				}	
+			}
+		}
+		
+		.nav-site{
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-o-transition: all 3s ease-in-out;
+			transition: all .3s ease-in-out;	
+			opacity: 1;
+
+			&.opacity{
+				opacity: 0;
+			}	
+			
+				@media (max-width: @screen-max-xs) {
+					margin-top: 20px;
+					margin-bottom: 70px;
+				}				
+					
+		}
+		
+		
+		.content-nav{
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-o-transition: all 3s ease-in-out;
+			transition: all .3s ease-in-out;	
+			opacity: 1;
+
+			&.opacity{
+				opacity: 0;
+			}			
+		}
+		
+		[data-option]{
+			opacity: 0;
+			position: absolute;
+			top:50px;
+			width: 100%;
+			height: 100%;
+			background: @color-white;
+			pointer-events: none;
+		  -webkit-transition: all .3s ease-in-out;
+		  -moz-transition: all .3s ease-in-out;
+		  -o-transition: all 3s ease-in-out;
+		  transition: all .3s ease-in-out;			
+					
+			
+			
+			&.active{
+				opacity: 1;
+				top:0;
+				pointer-events: all;
+			}
+		}
+		
+
+		//Version izquierda
+		&[data-side="left"]{
+
+		}		
+
+		//Version derecha
+		&[data-side="right"]{
+			z-index: 9999!important;
+		}		
+		
+		//Version top
+		&[data-side="top"]{
+
+		}		
+		
+		//Versión bottom
+		&[data-side="bottom"]{
+
+		}		
+	}
+
+
+	//Estilos de la capa semitransparente
+	.canvas-wrap { 
+
+	}
+	
+	//Tipos de animaciones
+
+	//Opción 1. El body se oculta para mostrar el off-canvas
+	//@import "../plugins/offcanvas/offcanvas-move.less";
+	
+	//Opcion 2. El off-canvas aparece por encima del body
+	@import "../plugins/offcanvas/offcanvas-overlay.less";
+	
+	//Opcion 3. El off-canvas desplaza al body excepto al header (Añadir clase hide-canvas-in a elementos que no sean el main)
+	//@import "../plugins/offcanvas/offcanvas-overlay-move.less";
+
+
