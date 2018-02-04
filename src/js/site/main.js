@@ -44,7 +44,31 @@ $(function() {
 		
 	});	
 
-
+	/*	--------------------------------------------------
+		Carrusel facebook
+	-------------------------------------------------- */
+	 $("#owl-facebook").owlCarousel({
+	 		autoplay:true,
+		    loop:true,
+			nav:true,		    
+		    responsiveClass:true,
+		    responsive:{
+		        0:{
+		            items:1,
+		            nav:false
+		        },
+		        600:{
+		            items:1,
+		            nav:false
+		        },
+		        1000:{
+		            items:1,
+		            nav:false,
+		            loop:true
+		        }
+		    }
+	 
+	  });
 	/*	--------------------------------------------------
 		Carrusel twitter
 	-------------------------------------------------- */
@@ -71,7 +95,31 @@ $(function() {
 	 
 	  });
 
-
+	/*	--------------------------------------------------
+		Carrusel opciones
+	-------------------------------------------------- */
+	 $("#owl-options").owlCarousel({
+	 		autoplay:true,
+		    loop:true,
+			nav:true,		    
+		    responsiveClass:true,
+		    responsive:{
+		        0:{
+		            items:4,
+		            nav:true
+		        },
+		        600:{
+		            items:7,
+		            nav:true
+		        },
+		        1000:{
+		            items:7,
+		            nav:true,
+		            loop:true
+		        }
+		    }
+	 
+	  });
 	/*	--------------------------------------------------
 		Carrusel videos
 	-------------------------------------------------- */
@@ -97,6 +145,10 @@ $(function() {
 		    }
 	 
 	  });
+	  
+	    
+	  
+	  
 	/*	--------------------------------------------------
 		Carrusel logos
 	-------------------------------------------------- */
@@ -136,8 +188,11 @@ $(function() {
 		$(this).parent().toggleClass('opened');
 	}); 	
 	
-	
-	
+	anchoVentana =$(window).width();
+	if(anchoVentana >= 1920){
+		$('#js-banners').insertBefore('#hacer .fluid-container.options');
+		$('#last').insertBefore('#hacer');
+	}
 	
 	
 	/*	--------------------------------------------------
