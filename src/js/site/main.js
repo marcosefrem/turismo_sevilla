@@ -98,7 +98,9 @@ $(function() {
 	/*	--------------------------------------------------
 		Carrusel opciones
 	-------------------------------------------------- */
-	 $("#owl-options").owlCarousel({
+	if(windowWidth >1080){
+		
+		 $("#owl-options").owlCarousel({
 	 		autoplay:true,
 		    loop:true,
 			nav:true,		    
@@ -120,6 +122,7 @@ $(function() {
 		    }
 	 
 	  });
+	}
 	/*	--------------------------------------------------
 		Carrusel videos
 	-------------------------------------------------- */
@@ -188,11 +191,16 @@ $(function() {
 		$(this).parent().toggleClass('opened');
 	}); 	
 	
-	anchoVentana =$(window).width();
-	if(anchoVentana >= 1920){
+
+	if(windowWidth >= 1920){
 		$('#js-banners').insertBefore('#hacer .fluid-container.options');
 		$('#last').insertBefore('#hacer');
 	}
+	if(windowHeight >= 1920){
+		$('#last').insertBefore('#hacer');
+		$('#js-banners').insertAfter('#hacer');
+	}
+	
 	
 	
 	/*	--------------------------------------------------

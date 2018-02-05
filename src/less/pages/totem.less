@@ -18,6 +18,10 @@
 			display: none;
 		}		
 		
+		body{
+			background-position: 0 -300px;
+		}
+		
 		.last{
 			height: 515px;
 			> div	{
@@ -33,7 +37,14 @@
 				height: 259px;	
 			}		
 		}	
-	
+		
+		
+		.last{
+			.twitter{
+				background: none!important;
+				border-top: 1px solid #fff;
+			}			
+		}
 		
 		.block-video{
 			&.owl-carousel{
@@ -132,9 +143,11 @@
 	
 		.container-slide{
 		height: 250px;
-		background-size: contain!important;
+		background-size: 200px!important;
 		background-repeat: no-repeat;
-		
+		.owl-carousel{
+			padding:15px;
+		}		
 		.item{
 			margin-top: 40px;
 		}
@@ -248,14 +261,58 @@
 }
 
 
-@media (min-height: 1920px) {
-	
+	@media (min-height: 1920px) {
+	.facebook{
+		display: none;
+	}
 	.block-mainnav{
 		display:none;
 	}
-	
+	.block-social{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		> .container{
+			width: 100%;
+			padding: 0;
+		}
+		.owl-item {
+			width: 100vw!important;
+			padding: 15px;
+			padding-left: 70px;
+			padding-right: 70px;
+			margin-top: 20px;
+		}
+		.container-slide[data-background]{
+			background-size: 200px;
+			background-repeat: no-repeat;
+		}
+		.owl-next,
+		.owl-prev{
+			display: block!important
+		}
+		.owl-controls{
+			&:after,
+			&:before{
+				display: none;
+			}
+		}
+	}
 	.portada{
 		height: 200px;
+		.logo-portada{
+			right: 88px;
+		}
+		 .h1{
+			  transform: rotate(-90deg) scale(.9);
+			  top:80px;
+			  right:-10px;
+			  opacity: .2;
+			  line-height: 45px;
+			  font-size: 2.8rem;
+			  strong{
+				  font-size: 5rem;
+			  }
+		 }
 	}
 	
 	.portada .logo-lonely {
@@ -286,7 +343,9 @@
 		&.hacer{
 	   		margin-top: 10px;
 		    margin-bottom: 10px;
-				
+			max-height: 515px;
+			overflow: auto;
+	
 			[class*="col-"]{
 				width: 20%;
 			}
