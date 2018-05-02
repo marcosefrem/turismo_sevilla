@@ -11,17 +11,150 @@
 		background-size: contain;
 		height: 340px;
 	}
+	.modal .close{
+		top: -50px;
+ 	   right: 0;
+ 	   left: auto;
+	}
+	.modal-body{
+		iframe{
+			height: 85vh;
+		}
+	}
+	
+	#owl-multimedia{
+		.owl-item{
+			margin-bottom: 5px;
+			margin-right:2.5px!important;
+		}		
+	}
+
+	iframe	{
+		width: 100%;
+		height: 650px;
+	}
+	
+	
+	
+	.languajes{
+		margin-top: 20px;
+		width: 100%;
+		text-align: center;
+		margin-left: 0!important;
+	}
+	.languajes ul{
+		display: inline-block;
+		text-align: center;
+	}
+	.languajes li{
+		display: inline-block;
+	}
+	.languajes li:before{
+		display: none;
+	}
+	
+	.languajes a{
+		display: block;
+		width: 200px;
+		height: 40px;
+		color:#fff;
+		line-height: 40px;
+	}
+
+	/*******************
+		
+		Flags
+		
+	**********************/
+	.flag{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		margin-right: 15px;
+		position: relative;
+		top:5px;
+	}
+	.spain	{
+	
+		background: url('../img/flags/spain.png');
+			background-size: cover;
+	}
+	.england {
+		background: url('../img/flags/england.png');
+			background-size: cover;
+		
+	}
+	
+	.france{
+		background: url('../img/flags/france.png');
+			background-size: cover;
+		
+	}
+	.italy{
+		background: url('../img/flags/italy.png');
+			background-size: cover;
+		
+	}
+	.germany{
+		background: url('../img/flags/germany.png');
+			background-size: cover;
+		
+	}
+
+
+		
+	.only-horizontal{
+			
+		display: none;
+		
+	}		
+		
+	.only-vertical{
+			
+		display: none;
+		
+	}
+			
+		.block-video{
+			&.slider{
+		  	  height: 185px!important;	
+			}
+		}	
 	@media (min-width: 1920px) {
 		
+		.only-vertical{
+			display: none!important;
+		}
+		.only-horizontal{
+				
+			display: block!important;
+			
+		}		
 		
+		.block-video.slider.owl-slider{
+		    height: 95px;
+		}	
+		.block-video{
+			&.slider{
+		  	  height: 185px!important;	
+			}
+			.owl-controls{
+				display: none!important;
+			}
+		}				
 		::-webkit-scrollbar {
 			display: none;
 		}		
 		
 		body{
 			background-position: 0 -300px;
+			.modal-header{
+				min-height: 0px;
+			}
+
 		}
-		
+
 		.last{
 			height: 515px;
 			> div	{
@@ -177,7 +310,8 @@
 				width: 55%;
 			}
 			&.hacer{
-				height: 40vh;
+				height: 260px;
+				overflow: hidden;
 				width: 100%;
 				[class*="col-"]{
 				}
@@ -257,11 +391,39 @@
 	    margin-left: -7.5px;
 	    margin-right: -7.5px;
 	}
+	iframe#iframeVimeo,
+	iframe#video_container{
+		height: 515px!important;
+
+	}	
+
 	
 }
 
 
 	@media (min-height: 1920px) {
+
+
+		
+	.only-vertical{
+			display: block!important;
+	}
+	.only-horizontal{
+				
+			display: none!important;
+			
+	
+	}
+
+	.languajes a{
+		display: block;
+		width: 180px;
+		height: 40px;
+		color:#fff;
+		line-height: 40px;
+	}		
+
+	
 	.facebook{
 		display: none;
 	}
@@ -269,8 +431,13 @@
 		display:none;
 	}
 	.block-social{
-		padding-top: 15px;
-		padding-bottom: 15px;
+		//padding-top: 70px;
+		//padding-bottom: 70px;
+
+
+		.owl-stage-outer{
+			height: 300px;
+		}
 		> .container{
 			width: 100%;
 			padding: 0;
@@ -280,7 +447,7 @@
 			padding: 15px;
 			padding-left: 70px;
 			padding-right: 70px;
-			margin-top: 20px;
+			margin-top: 70px;
 		}
 		.container-slide[data-background]{
 			background-size: 200px;
@@ -347,7 +514,7 @@
 			overflow: auto;
 	
 			[class*="col-"]{
-				width: 20%;
+				width: 100%;
 			}
 			
 		}	

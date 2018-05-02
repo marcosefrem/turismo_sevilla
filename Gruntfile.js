@@ -134,14 +134,14 @@ module.exports = function(grunt) {
 		          livereload: false,
 		      	}
 			},			
-			//webfont: {
-			//    files: ['<%= globalConfig.system  %>/svg/svg-iconfont/*.svg'],
-			//    tasks: ['webfont'],
-			//    options: {
-		    //      spawn: false,
-		    //      livereload: false,
-		    //  	}
-			//},
+			webfont: {
+			    files: ['<%= globalConfig.system  %>/svg/svg-iconfont/*.svg'],
+			   tasks: ['webfont'],
+				   options: {
+		         spawn: false,
+		          livereload: false,
+		      	}
+			},
 			//webfontLess: {
 			//    files: ['<%= globalConfig.system  %>/svg/svg-iconfont/*.svg'],
 			//    tasks: ['less'],
@@ -327,20 +327,20 @@ module.exports = function(grunt) {
 
 		},
 		
-		//webfont: {
-		//    icons: {
-		//        src: '<%= globalConfig.system  %>/svg/svg-iconfont/*.svg',
-		//        dest: '<%= globalConfig.system  %>/fonts',
-		//        destCss: '<%= globalConfig.system  %>/less/components/',
-		//        options: {
-		//            stylesheet: 'less',
-		//            relativeFontPath: '../fonts',
-		//            htmlDemo: false,
-		//            embed: true,
-		//            syntax: 'bootstrap'
-		//        }
-		//    }
-		//},		
+		webfont: {
+		    icons: {
+		        src: '<%= globalConfig.tplPath  %>/svg/*.svg',
+		       dest: '<%= globalConfig.system  %>/fonts',
+		       destCss: '<%= globalConfig.system  %>/less/components/',
+		      options: {
+		          stylesheet: 'less',
+		           relativeFontPath: '../fonts',
+		           htmlDemo: false,
+			         embed: true,
+		           syntax: 'bootstrap'
+		       }
+		   }
+		},		
 				
 		grunticon: {
 		    myIcons: {
