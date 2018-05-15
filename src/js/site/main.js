@@ -11,7 +11,45 @@
 -------------------------------------------------- */
 $(function() {
 	placeVideo();	
+
+	// Funcionalidad quitar sonido
+	var myVideo2 = $('#video2'); 
+	var myVideo =  $('#video1');
+	//myVideo.mute();
+	//myVideo2.mute();
+
+	/*	--------------------------------------------------
+		carousel logos
+	-------------------------------------------------- */	
+
+
+	   setInterval(swapImages,10000);
+
+	   
+	    function swapImages(){
 	
+	
+			$('.fade-carousel').each(function(){
+				
+				$(this).find('li:first-child').addClass('first');
+				
+	    	    active = $(this).find('.active'); 
+		    
+		        if($(active).next().length > 0){
+					next = $('.active').next(); 
+			       
+		        }else{
+					next =  $(this).find('.first'); 
+		        }
+	    
+				active.removeClass('active');
+				next.addClass('active');
+
+			});
+
+	        //var next = ($('.active').next().length > 0) ? $('.active').next() : $('.first');
+	        
+		};
 	/*	--------------------------------------------------
 		Funcionalidad buscador
 	-------------------------------------------------- */
@@ -43,7 +81,47 @@ $(function() {
 		$(this).parent().fadeOut(500);
 		
 	});	
-
+	/*	--------------------------------------------------
+		Quitar capa reposo
+	-------------------------------------------------- */	
+	
+	$('#activate-screen').click(function(){
+		$('#rest_screen').removeClass('active');
+		$('#rest_screen').addClass('hide');
+	});	
+	
+	
+	/*	--------------------------------------------------
+		Carrusel banners
+	-------------------------------------------------- */
+	 $("#owl-banner-rest").owlCarousel({
+	 		autoplay:true,
+		    loop:true,
+			nav:true,		    
+		    responsiveClass:true,
+		    responsive:{
+		        0:{
+		            items:1,
+		            nav:false
+		        },
+		        600:{
+		            items:1,
+		            nav:false
+		        },
+		        1000:{
+		            items:1,
+		            nav:false,
+		            loop:true
+		        },
+		        1920:{
+		            items:3,
+		            nav:false,
+		            loop:true
+		        }		        
+		        
+		    }
+	 
+	  });
 	/*	--------------------------------------------------
 		Carrusel facebook
 	-------------------------------------------------- */
@@ -267,7 +345,6 @@ $(function() {
 		$(this).attr('data-id', 'video'+ n);
 		
 	});
-	
 
 	// Funcionalidad ver vídeos
 	$('.item a').on('click', function(e){
@@ -336,6 +413,8 @@ $(function() {
 		
 	}
     function onYouTubePlayerAPIReady(URL) {
+
+
 	    	//eliminamos la capoa contenedora y volvemos a crearla
 	    	$('#video_container').remove();
 	    	var videoContainer = '<div id="video_container"></div>';
